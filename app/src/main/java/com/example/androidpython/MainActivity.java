@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements IUploadCallbacks 
                                     public void onResponse(Call<String> call, Response<String> response) {
                                         dialog.dismiss();
 
-                                        String image_processed_link = new StringBuilder("http://10.0.2.2:5000" + response.body().replace("\"", "")).toString();
+                                        String image_processed_link = new StringBuilder("http://10.0.2.2:5000/" + response.body().replace("\"", "")).toString();
                                         Picasso.get().load(image_processed_link)
                                                 .into(imageView);
 
